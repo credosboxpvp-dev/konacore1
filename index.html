@@ -3,107 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ekibimiz</title>
+    <title>911 CARRERA | Ekibimiz</title>
     <style>
         body {
             margin: 0; padding: 0;
-            background: #111827; /* Koyu arka plan */
-            background: linear-gradient(180deg, #111827 0%, #1e293b 100%);
+            background: #0b0f1a;
+            background: radial-gradient(circle at center, #161b22 0%, #0b0f1a 100%);
             font-family: 'Inter', sans-serif;
             color: white; min-height: 100vh;
             display: flex; flex-direction: column; align-items: center;
+            overflow-x: hidden;
         }
 
-        /* Kar Tanesi Efekti */
-        .snowflake {
-            color: #fff; position: fixed; top: -10%; z-index: 999;
-            user-select: none; animation: fall linear infinite;
-        }
-        @keyframes fall { 0% { top: -10%; } 100% { top: 100%; } }
-
-        /* Başlık */
+        /* Başlık Bölümü */
         .header {
-            margin-top: 50px; text-align: center;
-            display: flex; flex-direction: column; align-items: center; gap: 10px;
+            margin-top: 80px; text-align: center;
         }
-        .header h1 { font-size: 3.5rem; margin: 0; display: flex; align-items: center; gap: 15px; }
-        .snow-icon { color: #7dd3fc; font-size: 3rem; }
+        .header h1 { 
+            font-size: 3.5rem; 
+            margin: 0; 
+            font-weight: 800; 
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
 
         /* Kart Konteynırı */
         .container {
             display: flex; justify-content: center; flex-wrap: wrap;
-            padding: 50px; gap: 30px;
+            padding: 60px 20px; gap: 40px;
         }
 
-        /* Ekran görüntüsündeki Cam Kart Tasarımı */
+        /* Cam Kart Tasarımı */
         .card {
-            background: rgba(30, 41, 59, 0.5);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
             border-radius: 40px;
-            padding: 40px;
+            padding: 50px 30px;
             width: 320px;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+            transition: all 0.3s ease;
+        }
+        .card:hover { 
+            transform: translateY(-10px); 
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(74, 222, 128, 0.5);
         }
 
-        /* Profil Fotoğrafları */
-        .avatar {
-            width: 160px; height: 160px;
+        /* Profil Resimleri */
+        .profile-img {
+            width: 180px; height: 180px;
             border-radius: 50%;
-            border: 4px solid #0f172a;
+            border: 6px solid #0b0f1a;
             margin-bottom: 25px;
             object-fit: cover;
-            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
 
-        /* İsimler ve Roller (Yeşil Yazı) */
-        .card h2 { color: #4ade80; margin: 10px 0; font-size: 1.8rem; font-weight: bold; }
-        .card p { color: #94a3b8; font-size: 1.1rem; margin: 0; }
+        .card h2 { color: #4ade80; margin: 15px 0 10px; font-size: 2rem; }
+        .card p { color: #94a3b8; font-size: 1.1rem; margin: 0; font-weight: 500; }
 
-        /* Alt Parlama Çizgisi */
-        .glow-line {
-            width: 60%; height: 2px;
-            background: linear-gradient(90deg, transparent, #4ade80, transparent);
-            margin: 20px auto 0;
-            opacity: 0.5;
+        /* Müzik Butonu */
+        #music-btn {
+            margin-top: 20px;
+            padding: 15px 40px;
+            background: transparent;
+            border: 2px solid #4ade80;
+            color: #4ade80;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 800;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        #music-btn:hover { 
+            background: #4ade80; 
+            color: #0b0f1a;
+            box-shadow: 0 0 20px rgba(74, 222, 128, 0.4);
         }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <h1><span class="snow-icon">❄️</span> Ekibimiz</h1>
+        <h1>Ekibimiz</h1>
     </div>
 
     <div class="container">
         <div class="card">
-            <img src="https://raw.githubusercontent.com/cdexecctru/fileupld/main/fbarubl5/31baba.jpg" alt="jujustukaisen31" class="avatar">
+            <img src="https://raw.githubusercontent.com/cdexecctru/fileupld/main/fbarubl5/31baba.jpg" alt="jujustukaisen31" class="profile-img">
             <h2>jujustukaisen31</h2>
-            <p>Ekip Üyesi / Geliştiriciki</p>
-            <div class="glow-line"></div>
+            <p>Ekip Üyesi / Geliştirici</p>
         </div>
 
         <div class="card">
-            <img src="https://raw.githubusercontent.com/cdexecctru/fileupld/main/e0pq30z8/TTNI_NETWORK.png" alt="curse_prime64" class="avatar">
+            <img src="https://raw.githubusercontent.com/cdexecctru/fileupld/main/e0pq30z8/TTNI_NETWORK.png" alt="curse_prime64" class="profile-img">
             <h2>curse_prime64</h2>
             <p>Ekip Üyesi / Yönetici</p>
-            <div class="glow-line"></div>
         </div>
     </div>
 
+    <button id="music-btn" onclick="toggleMusic()">Müziği Başlat</button>
+
+    <audio id="bgMusic" loop>
+        <source src="911 CARRERA - DEHA INC. (Official Music Video).mp3" type="audio/mpeg">
+    </audio>
+
     <script>
-        function createSnowflake() {
-            const snowflake = document.createElement('div');
-            snowflake.classList.add('snowflake');
-            snowflake.innerHTML = '❄';
-            snowflake.style.left = Math.random() * 100 + 'vw';
-            snowflake.style.animationDuration = Math.random() * 3 + 4 + 's';
-            snowflake.style.opacity = Math.random();
-            document.body.appendChild(snowflake);
-            setTimeout(() => snowflake.remove(), 7000);
+        const music = document.getElementById("bgMusic");
+        const btn = document.getElementById("music-btn");
+
+        function toggleMusic() {
+            if (music.paused) {
+                music.play();
+                btn.innerText = "Müzik Çalıyor";
+            } else {
+                music.pause();
+                btn.innerText = "Müzik Durduruldu";
+            }
         }
-        setInterval(createSnowflake, 150);
     </script>
 </body>
 </html>
