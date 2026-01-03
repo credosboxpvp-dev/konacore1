@@ -3,90 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dijital Ürün Mağazası</title>
+    <title>Ekibimiz | Vibe</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(180deg, #001f3f 0%, #0074D9 100%);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: white;
+            margin: 0; padding: 0;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: white; min-height: 100vh;
+            display: flex; flex-direction: column; align-items: center;
             overflow-x: hidden;
-            min-height: 100vh;
         }
 
         /* Kar Tanesi Efekti */
         .snowflake {
-            color: #fff;
-            font-size: 1.2em;
-            position: fixed;
-            top: -10%;
-            z-index: 9999;
-            user-select: none;
-            cursor: default;
+            color: #fff; position: fixed; top: -10%; z-index: 999;
+            user-select: none; pointer-events: none;
             animation: fall linear infinite;
         }
-
         @keyframes fall {
-            0% { top: -10%; }
-            100% { top: 100%; }
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
         }
 
-        /* Ürün Kartları */
+        /* Başlık Bölümü */
+        .header {
+            margin-top: 60px; text-align: center;
+            display: flex; align-items: center; gap: 20px;
+        }
+        .header h1 { font-size: 3.5rem; margin: 0; font-weight: 800; letter-spacing: -1px; }
+        .snow-icon { font-size: 3.5rem; color: #7dd3fc; animation: pulse 2s infinite; }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Kart Konteyner */
         .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            padding: 50px;
-            gap: 20px;
+            display: flex; justify-content: center; flex-wrap: wrap;
+            padding: 60px 20px; gap: 40px;
         }
 
+        /* Kart Tasarımı */
         .card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            width: 250px;
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            border-radius: 50px;
+            padding: 50px 30px;
+            width: 340px;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-15px) scale(1.02);
+            background: rgba(30, 41, 59, 0.6);
+            border-color: rgba(74, 222, 128, 0.4);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.7);
         }
 
-        .card img {
-            width: 80px;
-            margin-bottom: 15px;
+        /* Profil Resimleri */
+        .profile-img {
+            width: 200px; height: 200px;
+            border-radius: 50%;
+            border: 10px solid #0f172a;
+            margin-bottom: 30px;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            background: #0f172a;
         }
 
-        h1 { text-align: center; margin-top: 50px; text-shadow: 2px 2px 4px #000; }
+        .card h2 { 
+            color: #4ade80; 
+            margin: 15px 0 10px; 
+            font-size: 2.2rem; 
+            font-weight: 700;
+        }
+        
+        .card p { 
+            color: #94a3b8; 
+            font-size: 1.2rem; 
+            margin: 0;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .card-glow {
+            width: 80%; height: 2px;
+            background: linear-gradient(90deg, transparent, #4ade80, transparent);
+            margin: 25px auto 0;
+            opacity: 0.3;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Kış Mağazasına Hoş Geldiniz</h1>
+    <div class="header">
+        <span class="snow-icon">❄️</span>
+        <h1>Ekibimiz</h1>
+    </div>
 
     <div class="container">
         <div class="card">
-            <h3>Valorant VP</h3>
-            <p>En uygun fiyatlı VP paketleri.</p>
-            <button style="padding: 10px 20px; cursor: pointer;">Satın Al</button>
+            <img src="images.jpg" alt="jujustukaisen31" class="profile-img">
+            <h2>jujustukaisen31</h2>
+            <p>Ekip Üyesi / Geliştiriciki</p>
+            <div class="card-glow"></div>
         </div>
 
         <div class="card">
-            <h3>Minecraft Hesap</h3>
-            <p>Premium ve Gamepass seçenekleri.</p>
-            <button style="padding: 10px 20px; cursor: pointer;">Satın Al</button>
-        </div>
-
-        <div class="card">
-            <h3>Robux</h3>
-            <p>Hızlı teslimat Robux yükleme.</p>
-            <button style="padding: 10px 20px; cursor: pointer;">Satın Al</button>
+            <img src="image_859c31.jpg" alt="curse_prime64" class="profile-img">
+            <h2>curse_prime64</h2>
+            <p>Ekip Üyesi / Yönetici</p>
+            <div class="card-glow"></div>
         </div>
     </div>
 
@@ -96,13 +130,13 @@
             snowflake.classList.add('snowflake');
             snowflake.innerHTML = '❄';
             snowflake.style.left = Math.random() * 100 + 'vw';
-            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
-            snowflake.style.opacity = Math.random();
+            snowflake.style.animationDuration = Math.random() * 3 + 5 + 's';
+            snowflake.style.opacity = Math.random() * 0.7 + 0.3;
             snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
-            
             document.body.appendChild(snowflake);
-            
-            setTimeout(() => {
-                snowflake.remove();
-            }, 5000);
+            setTimeout(() => snowflake.remove(), 8000);
         }
+        setInterval(createSnowflake, 120);
+    </script>
+</body>
+</html>
