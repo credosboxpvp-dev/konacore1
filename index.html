@@ -3,200 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bloodlust | Vanilla SMP</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    
+    <title>Minecraft Sunucu Marketi</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            /* Koyu kırmızıdan siyaha derin gradyan */
-            background: radial-gradient(circle, #2a0000 0%, #050000 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
             color: white;
-            font-family: 'Roboto', sans-serif;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            overflow: hidden;
-            position: relative;
+            padding: 50px;
         }
 
-        /* Arka plan partikül/doku efekti */
-        body::before {
-            content: "";
-            position: absolute;
-            width: 100%; height: 100%;
-            background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
-            opacity: 0.15;
-            z-index: 1;
-        }
+        h1 { margin-bottom: 30px; color: #ffcc00; text-shadow: 2px 2px #000; }
 
         .container {
-            position: relative;
-            z-index: 10;
-            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
             width: 100%;
-            max-width: 500px;
+            max-width: 1200px;
+        }
+
+        .card {
+            background: #2d2d2d;
+            border: 2px solid #444;
+            border-radius: 15px;
             padding: 20px;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        /* Logo Alanı - Parlama Efektli */
-        .logo-box {
-            width: 260px;
-            height: 260px;
-            margin: 0 auto 25px;
-            border: 3px solid #ff0000;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
-            background-color: #1a0000;
-        }
-
-        .logo-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        h1 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 3.5rem;
-            letter-spacing: 5px;
-            text-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
-            margin-bottom: 5px;
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            color: #ccc;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-            display: block;
-        }
-
-        /* Parlayan IP ve Durum Paneli (Görseldeki Stil) */
-        .status-panel {
-            background: rgba(0, 0, 0, 0.6);
-            border: 2px solid #ff0000;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: inset 0 0 15px rgba(255, 0, 0, 0.3), 0 0 20px rgba(255, 0, 0, 0.2);
-            margin-bottom: 30px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .status-panel:hover {
-            box-shadow: 0 0 35px rgba(255, 0, 0, 0.5);
-            transform: translateY(-3px);
-            background: rgba(20, 0, 0, 0.8);
-        }
-
-        .ip-label {
-            font-size: 1.2rem;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .online-info {
-            color: #ffcc00; /* Görseldeki sarı online sayısı */
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        .copy-hint {
-            font-size: 0.8rem;
-            color: #777;
-            margin-top: 10px;
-            text-transform: uppercase;
-        }
-
-        /* Buton Grubu */
-        .btn-group {
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
             display: flex;
-            gap: 15px;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: space-between;
         }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #ffcc00;
+        }
+
+        .card h2 { margin-top: 0; color: #00ffcc; }
+        .price { font-size: 24px; font-weight: bold; margin: 15px 0; color: #fff; }
+        .duration { font-size: 14px; color: #aaa; margin-bottom: 20px; }
 
         .btn {
-            flex: 1;
-            padding: 15px;
+            background-color: #ffcc00;
+            color: #000;
+            padding: 10px 20px;
+            border: none;
             border-radius: 5px;
-            text-decoration: none;
             font-weight: bold;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            transition: 0.3s;
-            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
         }
 
-        .btn-discord {
-            background: #7289da; /* Discord Mavisi */
-            color: white;
-            box-shadow: 0 0 10px rgba(114, 137, 218, 0.3);
+        .btn:hover { background-color: #e6b800; }
+
+        .helper-card {
+            border: 2px dashed #ff4444;
+            background: #3d1a1a;
         }
 
-        .btn-market {
-            background: #ffcc00; /* Görseldeki Sarı Buton */
-            color: black;
-            box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
-        }
-
-        .btn:hover {
-            filter: brightness(1.2);
-            transform: scale(1.05);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 500px) {
-            h1 { font-size: 2.5rem; }
-            .btn-group { flex-direction: column; }
-        }
+        .helper-card h2 { color: #ff4444; }
+        .helper-card .btn { background-color: #ff4444; color: white; }
     </style>
 </head>
 <body>
 
+    <h1>SUNUCU MARKETİ</h1>
+
     <div class="container">
-        <div class="logo-box">
-            <img src="https://via.placeholder.com/300x300/8b0000/ffffff?text=LOGO+BURAYA" alt="Bloodlust Logo">
+        <div class="card">
+            <h2>VIP</h2>
+            <div class="price">25 TL</div>
+            <div class="duration">Günlük Paket</div>
+            <p>Özel kitler, sohbette renkli yazı ve daha fazlası!</p>
+            <button class="btn">SATIN AL</button>
         </div>
 
-        <h1>BLOODLUST</h1>
-        <span class="subtitle">Vanilla SMP</span>
-
-        <div class="status-panel" onclick="copyIP()">
-            <span class="ip-label">Server IP: party-bargain.gl.joinmc.link</span>
-            <div class="online-info">Online: 69/100 players</div>
-            <p class="copy-hint">(Click to Copy IP)</p>
+        <div class="card">
+            <h2>VIP</h2>
+            <div class="price">50 TL</div>
+            <div class="duration">Haftalık Paket</div>
+            <p>7 gün boyunca tüm VIP avantajlarını kullanın.</p>
+            <button class="btn">SATIN AL</button>
         </div>
 
-        <div class="btn-group">
-            <a href="#" class="btn btn-discord">JOIN DISCORD</a>
-            <a href="#" class="btn btn-market">SERVER MARKET</a>
+        <div class="card">
+            <h2>MVP</h2>
+            <div class="price">65 TL</div>
+            <div class="duration">Günlük Paket</div>
+            <p>Uçuş yetkisi ve özel efektlerle fark yaratın!</p>
+            <button class="btn">SATIN AL</button>
+        </div>
+
+        <div class="card">
+            <h2>MVP</h2>
+            <div class="price">80 TL</div>
+            <div class="duration">Haftalık Paket</div>
+            <p>En üst düzey yetkilerle sunucunun tadını çıkarın.</p>
+            <button class="btn">SATIN AL</button>
+        </div>
+
+        <div class="card helper-card">
+            <h2>HELPER</h2>
+            <div class="price">ÜCRETSİZ</div>
+            <div class="duration">Yetkili Başvurusu</div>
+            <p>Ekibimize katılmak ve sunucuyu yönetmek ister misin?</p>
+            <button class="btn">BAŞVURU YAP</button>
         </div>
     </div>
-
-    <script>
-        function copyIP() {
-            const ip = "party-bargain.gl.joinmc.link";
-            navigator.clipboard.writeText(ip).then(() => {
-                alert("IP Adresi kopyalandı! Minecraft'a giriş yapabilirsin.");
-            });
-        }
-    </script>
 
 </body>
 </html>
