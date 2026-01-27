@@ -3,126 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>911 CARRERA | Ekibimiz</title>
+    <title>Minecraft Sunucusu | Kırmızı Tema</title>
     <style>
         body {
-            margin: 0; padding: 0;
-            background: #0b0f1a;
-            background: radial-gradient(circle at center, #161b22 0%, #0b0f1a 100%);
-            font-family: 'Inter', sans-serif;
-            color: white; min-height: 100vh;
-            display: flex; flex-direction: column; align-items: center;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1615555198840-798d13967403?q=80&w=2070&auto=format&fit=crop'); /* Arka plana hafif bir MC görseli */
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
-        }
-
-        /* Başlık Bölümü */
-        .header {
-            margin-bottom: 40px; text-align: center;
-        }
-        .header h1 { 
-            font-size: 3.5rem; 
-            margin: 0; 
-            font-weight: 800; 
-            letter-spacing: -1px;
-            text-transform: uppercase;
-        }
-
-        /* Kart Konteynırı */
-        .container {
-            display: flex; justify-content: center; flex-wrap: wrap;
-            gap: 40px; margin-bottom: 40px;
-        }
-
-        /* Cam Kart Tasarımı */
-        .card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(15px);
-            border-radius: 40px;
-            padding: 50px 30px;
-            width: 320px;
+            height: 100vh;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
-            transition: all 0.3s ease;
-        }
-        .card:hover { 
-            transform: translateY(-10px); 
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(74, 222, 128, 0.5);
         }
 
-        /* Profil Resimleri */
-        .profile-img {
-            width: 180px; height: 180px;
-            border-radius: 50%;
-            border: 6px solid #0b0f1a;
-            margin-bottom: 25px;
-            object-fit: cover;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        .container {
+            background: rgba(139, 0, 0, 0.8); /* Koyu Kırmızı Şeffaf Panel */
+            padding: 40px;
+            border-radius: 15px;
+            border: 2px solid #ff0000;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+            max-width: 500px;
+            width: 90%;
         }
 
-        .card h2 { color: #4ade80; margin: 15px 0 10px; font-size: 2rem; }
-        .card p { color: #94a3b8; font-size: 1.1rem; margin: 0; font-weight: 500; }
-
-        /* Müzik Butonu */
-        #music-btn {
-            padding: 15px 40px;
-            background: transparent;
-            border: 2px solid #4ade80;
-            color: #4ade80;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 800;
-            letter-spacing: 1px;
-            transition: 0.3s;
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
             text-transform: uppercase;
+            letter-spacing: 3px;
         }
-        #music-btn:hover { 
-            background: #4ade80; 
-            color: #0b0f1a;
-            box-shadow: 0 0 20px rgba(74, 222, 128, 0.4);
+
+        .server-status {
+            background: #000;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-family: 'Courier New', Courier, monospace;
+            border-left: 5px solid #ff0000;
+        }
+
+        .ip-box {
+            font-weight: bold;
+            color: #ff4d4d;
+            cursor: pointer;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background: #ff0000;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #b30000;
+            transform: scale(1.05);
+        }
+
+        .btn.market {
+            background: gold;
+            color: black;
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>Ekibimiz</h1>
-    </div>
-
     <div class="container">
-        <div class="card">
-            <img src="https://raw.githubusercontent.com/cdexecctru/fileupld/main/fbarubl5/31baba.jpg" alt="jujustukaisen31" class="profile-img">
-            <h2>jujustukaisen31</h2>
-            <p>Ekip Üyesi / Geliştirici</p>
+        <h1>SUNUCU ADI</h1>
+        <p>Hayatta kalmaya hazır mısın? Adaletli ve aksiyon dolu bir macera seni bekliyor.</p>
+        
+        <div class="server-status">
+            Sunucu IP: <span class="ip-box">play.sunucuadi.com</span><br>
+            <small>(Tıkla ve Kopyala)</small>
         </div>
 
-        <div class="card">
-            <img src="https://raw.githubusercontent.com/cdexecctru/fileupld/main/e0pq30z8/TTNI_NETWORK.png" alt="curse_prime64" class="profile-img">
-            <h2>curse_prime64</h2>
-            <p>Ekip Üyesi / Yönetici</p>
+        <div class="btn-group">
+            <a href="#" class="btn">Discord Katıl</a>
+            <a href="#" class="btn market">Market</a>
         </div>
     </div>
 
-    <button id="music-btn" onclick="toggleMusic()">Müziği Başlat</button>
-
-    <audio id="bgMusic" loop>
-        <source src="911 CARRERA - DEHA INC. (Official Music Video).mp3" type="audio/mpeg">
-    </audio>
-
-    <script>
-        const music = document.getElementById("bgMusic");
-        const btn = document.getElementById("music-btn");
-
-        function toggleMusic() {
-            if (music.paused) {
-                music.play();
-                btn.innerText = "Müzik Çalıyor";
-            } else {
-                music.pause();
-                btn.innerText = "Müzik Durduruldu";
-            }
-        }
-    </script>
 </body>
 </html>
