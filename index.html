@@ -3,117 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minecraft Sunucu Marketi</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #1a1a1a;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 50px;
-        }
-
-        h1 { margin-bottom: 30px; color: #ffcc00; text-shadow: 2px 2px #000; }
-
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            width: 100%;
-            max-width: 1200px;
-        }
-
-        .card {
-            background: #2d2d2d;
-            border: 2px solid #444;
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s, border-color 0.3s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: #ffcc00;
-        }
-
-        .card h2 { margin-top: 0; color: #00ffcc; }
-        .price { font-size: 24px; font-weight: bold; margin: 15px 0; color: #fff; }
-        .duration { font-size: 14px; color: #aaa; margin-bottom: 20px; }
-
-        .btn {
-            background-color: #ffcc00;
-            color: #000;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background 0.2s;
-        }
-
-        .btn:hover { background-color: #e6b800; }
-
-        .helper-card {
-            border: 2px dashed #ff4444;
-            background: #3d1a1a;
-        }
-
-        .helper-card h2 { color: #ff4444; }
-        .helper-card .btn { background-color: #ff4444; color: white; }
-    </style>
+    <title>Developer Portfolyo | Adınız</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="logo">Dev<span>Portfolio</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Ana Sayfa</a></li>
+            <li><a href="#projects">Projeler</a></li>
+            <li><a href="#contact">İletişim</a></li>
+        </ul>
+        <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+    </nav>
 
-    <h1>SUNUCU MARKETİ</h1>
-
-    <div class="container">
-        <div class="card">
-            <h2>VIP</h2>
-            <div class="price">25 TL</div>
-            <div class="duration">Günlük Paket</div>
-            <p>Özel kitler, sohbette renkli yazı ve daha fazlası!</p>
-            <button class="btn">SATIN AL</button>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Merhaba, Ben <span class="highlight">Yazılımcı Adı</span></h1>
+            <p>Full-Stack Developer | Modern Web Çözümleri Üretiyorum</p>
+            <a href="#projects" class="btn">Projelerimi Gör</a>
         </div>
+    </section>
 
-        <div class="card">
-            <h2>VIP</h2>
-            <div class="price">50 TL</div>
-            <div class="duration">Haftalık Paket</div>
-            <p>7 gün boyunca tüm VIP avantajlarını kullanın.</p>
-            <button class="btn">SATIN AL</button>
+    <section id="projects" class="projects">
+        <h2>Seçkin Projeler</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <i class="fas fa-code-branch"></i>
+                <h3>E-Ticaret API</h3>
+                <p>Node.js ve MongoDB ile geliştirilmiş ölçeklenebilir bir backend projesi.</p>
+            </div>
+            <div class="project-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Hava Durumu Uygulaması</h3>
+                <p>React Native kullanarak geliştirilen, gerçek zamanlı veri çeken mobil uygulama.</p>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <h2>MVP</h2>
-            <div class="price">65 TL</div>
-            <div class="duration">Günlük Paket</div>
-            <p>Uçuş yetkisi ve özel efektlerle fark yaratın!</p>
-            <button class="btn">SATIN AL</button>
+    <footer id="contact">
+        <p>Hadi birlikte çalışalım!</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:email@adresiniz.com"><i class="fas fa-envelope"></i></a>
         </div>
+        <p>&copy; 2026 Tüm Hakları Saklıdır.</p>
+    </footer>
 
-        <div class="card">
-            <h2>MVP</h2>
-            <div class="price">80 TL</div>
-            <div class="duration">Haftalık Paket</div>
-            <p>En üst düzey yetkilerle sunucunun tadını çıkarın.</p>
-            <button class="btn">SATIN AL</button>
-        </div>
-
-        <div class="card helper-card">
-            <h2>HELPER</h2>
-            <div class="price">ÜCRETSİZ</div>
-            <div class="duration">Yetkili Başvurusu</div>
-            <p>Ekibimize katılmak ve sunucuyu yönetmek ister misin?</p>
-            <button class="btn">BAŞVURU YAP</button>
-        </div>
-    </div>
-
+    <script src="script.js"></script>
 </body>
 </html>
